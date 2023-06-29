@@ -1,0 +1,310 @@
+﻿1)Do the below programs in anonymous function & IIFE
+a)Print odd numbers in an array
+Answer:
+//anonymous function
+var odd=function(arr){
+  for(var i=0;i<arr.length;i++)
+  {
+    if(arr[i]%2!==0)
+    {
+      console.log(arr[i]);
+    }
+  }
+}
+odd([1,2,3,4,5,6,7,8,9,10]);
+//IIFE function
+(function(arr)
+{
+  for(var i=0;i<arr.length;i++)
+  {
+    if(arr[i]%2!==0)
+    {
+      console.log(arr[i]);
+    }
+  }
+})([1,2,3,4,5,6,7,8,9,10]);
+—---------------------------------------------------------------------------------------------
+b) Convert all the strings to title caps in a string array
+Answer:
+//anonymous function
+function titleCase(str) {
+  str=str.toLowerCase();
+  str=str.split(" ");
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+    
+  }
+  console.log(str.join(" "));
+ 
+}
+titleCase("i'm divya from chennai");
+//IIFE function
+(function(str)
+{
+  str=str.toLowerCase();
+  str=str.split(" ");
+  for(var i=0;i<str.length;i++)
+  {
+    str[i]=str[i].charAt(0).toUpperCase()+str[i].slice(1);
+  }
+  console.log(str.join(" "));
+  
+})("i,m divya from chennai");
+—---------------------------------------------------------------------------------------------
+c)Sum of all numbers in an array
+Answer:
+//anonymous function
+var s=0;
+var sum=function(arr)
+{
+ for(var i=0;i<arr.length;i++)
+ {
+   s=s+arr[i];
+ }
+ console.log(s);
+}
+sum([1,2,3,5,6]);
+//IIFE function
+(function(arr)
+{
+  var s=0;
+  for(var i=0;i<arr.length;i++)
+  {
+   s=s+arr[i];
+  }
+  console.log(s);
+})([1,2,3,4,5]);
+—---------------------------------------------------------------------------------------------
+d)Return all the prime numbers in an array
+//anonymous function
+var prime=function(arr)
+{
+  for(var i=0;i<arr.length;i++)
+  {
+    var count=0;
+    for(var j=2;j<arr[i];j++)
+    {
+      if(arr[i]%j==0)
+      {
+        count=1;
+        break;
+      }
+    }
+    if(count==0)
+    {
+      console.log(arr[i]);
+    }
+    
+  }
+}
+prime([1,2,3,4,5,6,7,8,9]);
+
+//IIFE function
+
+(function(arr)
+{
+  
+  for(var i=0;i<arr.length;i++)
+  {
+    var count=0;
+    for(var j=2;j<arr[i];j++)
+    {
+      if(arr[i]%j== 0)
+      {
+        count=1;
+        break;
+      }
+    }
+    if(count==0)
+    {
+      console.log(arr[i]);
+    }
+  }
+  
+})([1,2,3,4,5,6,7,8,9]);
+—---------------------------------------------------------------------------------------------
+e)Return all the palindromes in an array
+Answer:
+//anonymous function
+var palindrome=function(arr)
+{
+  var result=[];
+  for(var i=0;i<arr.length;i++)
+  {
+    var y= arr[i].toString();
+    
+    var z= y.split("").reverse().join("");
+    if(y===z)
+    {
+      result.push(y);
+    }
+  }
+console.log(result);
+}
+palindrome(["bob",1221,"tea","bus","madam",123])
+
+
+//IIFE function
+(function(arr)
+{
+  var result=[];
+  for(var i=0;i<arr.length;i++)
+  {
+    var y=arr[i].toString();
+    var z=y.split("").reverse().join("");
+    if(y===z)
+    {
+      result.push(y);
+    }
+  }
+  console.log(result);
+})(["bob",1221,"tea","bus","madam",123]);
+—---------------------------------------------------------------------------------------------
+f)Return median of two sorted arrays of the same size.
+//anonymous function
+var median=function(arr)
+{
+  var half=arr.length/2;
+  console.log(arr.length % 2 ? arr[Math.floor(half)] : (arr[half - 1] + arr[half]) / 2);
+}
+median([1,2,3,4,5]);
+
+
+//IIFE function
+(function(arr)
+{
+  var half=arr.length/2;
+  console.log(arr.length % 2 ? arr[Math.floor(half)] : (arr[half - 1] + arr[half]) / 2);
+})([1,2,3,4,5,6]);
+—---------------------------------------------------------------------------------------------
+g)Remove duplicates from an array
+//anonymous function
+var dup=function(arr)
+{
+  var n=[...new Set(arr)];
+  console.log(n);
+}
+dup([1,1,2,2,3,3,4,4,5,5]);
+
+//IIFE function
+(function(arr)
+{
+  var n=[...new Set(arr)];
+  console.log(n);
+})([1,1,2,2,3,3,4,4,5,5]);
+—---------------------------------------------------------------------------------------------
+h)Rotate an array by k times
+//anonymous function
+var rotate=function(arr,k)
+{
+  for(var i=0;i<k;i++)
+  {
+    arr.unshift(arr.pop());
+  }
+  console.log(arr);
+}
+rotate([1,2,3,4,5],2);
+
+
+//IIFE function
+(function(arr,k)
+{
+  for(var i=0;i<k;i++)
+  {
+    arr.unshift(arr.pop());
+  }
+  console.log(arr);
+})([1,2,3,4,5],4);
+—---------------------------------------------------------------------------------------------
+—---------------------------------------------------------------------------------------------
+2.Do the below programs in arrow functions.
+a)Print odd numbers in an array
+Answer:
+//Arrow Function
+var odd=(arr)=>
+{
+  for(var i=0;i<arr.length;i++)
+  {
+    if(arr[i] % 2 !== 0)
+    {
+      console.log(arr[i]);
+    }
+    
+  }
+}
+odd([1,2,3,4,5,6,7,8,9]);
+—---------------------------------------------------------------------------------------------
+b)Convert all the strings to title caps in a string array
+Answer:
+//Arrow Function
+var titlecaps=(str)=>
+{
+  str=str.toLowerCase();
+  str=str.split(" ");
+  for(var i=0;i<str.length;i++)
+  {
+    str[i]=str[i].charAt(0).toUpperCase()+str[i].slice(1);
+  }
+  console.log(str.join(" "));
+  
+}
+titlecaps("i,m divya from chennai");
+—---------------------------------------------------------------------------------------------
+c)Sum of all numbers in an array
+Answer:
+//Arrow Function
+var sum=(arr)=>
+{
+  var s=0;
+  for(var i=0;i<arr.length;i++)
+  {
+    s=s+arr[i];
+  }
+  console.log(s);
+}
+sum([1,2,3,4,5]);
+—---------------------------------------------------------------------------------------------
+d)Return all the prime numbers in an array
+Answer:
+//Arrow Function
+var prime=(arr)=>
+{
+  for(var i=0;i<arr.length;i++)
+  {
+    var count=0;
+    for(var j=2;j<arr[i];j++)
+    {
+      if(arr[i]%j==0)
+      {
+        count=1;
+        break;
+      }
+      
+    }
+    if(count==0)
+    {
+      console.log(arr[i]);
+    }
+  }
+}
+prime([1,2,3,4,5,6,7,8,9]);
+—---------------------------------------------------------------------------------------------
+e)Return all the palindromes in an array
+Answer:
+//Arrow Function
+var palindrome=(arr)=>
+{
+  var result=[];
+  for(var i=0;i<arr.length;i++)
+  {
+    var y=arr[i].toString();
+    var z=y.split("").reverse().join("");
+    if(y===z)
+    {
+      result.push(y);
+    }
+  }
+  console.log(result);
+}
+palindrome(["bob","bus"])
+—---------------------------------------------------------------------------------------------
